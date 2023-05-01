@@ -48,6 +48,7 @@ def new_chat():
     st.session_state["input"] = ""
     st.session_state.entity_memory.store = {} 
     st.session_state.entity_memory.buffer.clear()
+
     # entity memory라는건  memory 중에서도 {'Sarah': '주인공, 여자, ...', 'Mr.Thompson': '집사, 수상한 움직임'} 
     # 이런 식으로 기억할 내용을 저장하는 방식. langchain의 기능임
 
@@ -67,7 +68,7 @@ st.markdown(
     )
 
 # API 키 입력받기
-API_O = "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"
+API_O = st.secrets["API_KEY"]
 
 
     # Large Language Model은 OpenAI 쓸거임
